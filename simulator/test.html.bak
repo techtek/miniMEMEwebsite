@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Price Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .coin {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .coin h2, .coin .price, .coin .change {
+            margin: 0;
+            padding: 0;
+            font-size: 1.2em;
+        }
+        .price {
+            color: green;
+        }
+        .change {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+  
+    <div id="coins"></div>
+
+    <script>
+        const apiURL = "https://api.dexscreener.com/latest/dex/pairs/tron/tdr7rpu33htog8qo9i676v56bzcjkpjqox,thffwkt8qbmbzyhxen3dmknslm3dbsmmw4,txpp6hxd3cpcd5hsdmbc78iaicxrqijjm1,tcngkaqhefpkecxokzp2ysv1bd2w8arxc8,tjpskeuvnzyq2bdetchdtskljpkqauj1sw,thumltrgjbfamaoa8isuuwfjfkmhtbkzof,ta54vyjqv2pkkwqcre2bmexyevep9ouy9y";
+
+        async function fetchData() {
+            const response = await fetch(apiURL);
+            const data = await response.json();
+            displayData(data.pairs);
+        }
+
+        function displayData(pairs) {
+            const coinsContainer = document.getElementById('coins');
+            coinsContainer.innerHTML = '';
+
+            pairs.forEach(pair => {
+                const coinElement = document.createElement('div');
+                coinElement.classList.add('coin');
+                coinElement.innerHTML = `
+                    <h2>${pair.baseToken.name} (${pair.baseToken.symbol})</h2>
+                    <div class="price">Price: $${pair.priceUsd}</div>
+                    <div class="change">5m Change: ${pair.priceChange.m5}%</div>
+                `;
+                coinsContainer.appendChild(coinElement);
+            });
+        }
+
+        fetchData();
+        setInterval(fetchData, 300000); // Refresh every 5 minutes
+    </script>
+</body>
+</html>
