@@ -253,8 +253,8 @@ const imageUrls = [
     "https://raw.githubusercontent.com/techtek/Downloads/main/image1.jpg",
     "https://raw.githubusercontent.com/techtek/Downloads/main/image2.jpg",
     "https://raw.githubusercontent.com/techtek/Downloads/main/image3.jpg",
-    "https://raw.githubusercontent.com/techtek/Downloads/main/image4.jpg",
-    "https://raw.githubusercontent.com/techtek/Downloads/main/image5.jpg"
+    "https://raw.githubusercontent.com/techtek/Downloads/main/image4.jpg"
+    
 ];
 
 let currentIndex = 0;
@@ -287,7 +287,7 @@ function startSlideshow() {
             // Refresh the page after a 3-second delay at the last image
             setTimeout(() => {
                 window.location.reload();
-            }, 3000); // Delay before refreshing
+            }, 6000); // Delay before refreshing
         }
     }
 
@@ -301,7 +301,7 @@ function startSlideshow() {
         } else {
             clearInterval(slideshowInterval); // Stop the interval if at the end
         }
-    }, 3000);
+    }, 6000);
 }
 
 // Initialize slideshow and clock when the DOM is ready
