@@ -25,23 +25,27 @@
 			  			  <p class="details">
               miniMEME is an open-source IoT project made by Techtek for the Tron Blockchain. It will work on ESP32-S3 chipsets and will work on inexpensive boards like the USD 15,- <a href="https://www.lilygo.cc/products/t-display-s3?variant=42284559827125">Lilygo S3</a> and other ESP32 (S3) boards.
 			  </p>
+			  			  <p class="details">
+              Try miniMEME WEB on a browser capable device <a href="https://techtek.github.io/miniMEMEweb/" target="_blank" style="color: white" onClick="window.open('https://techtek.github.io/miniMEMEweb/','minimemeweb','resizable,height=730,width=730'); return false;">try </a>it now</p></center>
+              </p>
 			  <p class="details">
-              Read more about miniMEME in the <a href="https://github.com/techtek/miniMEMEsoftware">Devpost</a> introduction and download the latest version on <a href="https://github.com/techtek/miniMEMEsoftware">Github</a>, here you can also find how to get started. Join the miniMEME community on <a href="https://discord.gg/GyjvNMtJ5V">Discord</a> or <a href="https://t.me/+UQ2B4besKqw0NDY0">Telegram</a>.
+              Read more about miniMEME in the <a href="https://devpost.com/software/minimeme">Devpost</a> introduction and download the latest version on <a href="https://devpost.com/software/minimeme">Github</a>, here you can also find how to get started. Join the miniMEME community on <a href="https://discord.gg/GyjvNMtJ5V">Discord</a> or <a href="https://t.me/+UQ2B4besKqw0NDY0">Telegram</a>.
               </p>
 
 			  <br>
-              <button onclick="location.href='https://github.com/techtek/miniMEMEsoftware'" type="button">Download</button>
+              <button onclick="location.href='https://github.com/techtek/miniMEMEsoftware'" type="button" style="cursor: pointer;">Download</button>
+
 			  
 			  <br><br>
 			  <img src="tronsunpumpdexscreener.png" alt="" width="100%" height="">
             </div>
             <div class="right">
 
-              <iframe src="simulator/index.html" height="400" width="100%" frameBorder="0" scrolling="no" title="Iframe Example"></iframe>
-                 <center><p class="details" style="margin-top: -40px; margin-left: 0px; font-size: 12px; color: grey;"><b>miniMEME Live Simulator</b></p></center>
-				 <center><p class="details" style="margin-top: -25px; margin-left: 0px; font-size: 12px; color: grey;">This simulates how miniMEME will work on your board</p></center>
-				 <center><p class="details" style="margin-top: -25px; margin-left: 0px; font-size: 12px; color: grey;"><a href="https://github.com/techtek/Downloads/commits/main/" target="_blank" style="color: #bdbdbd" onClick="window.open('https://github.com/techtek/Downloads/commits/main/','pagename','resizable,height=1000,width=500'); return false;">Server Activity</a>
- | Board used: ESP32-S3 by Lilygo</p></center>
+              <iframe src="simulator/index.html" height="100%" width="1300px" frameBorder="0" scrolling="no" title="Iframe"></iframe>
+			  <br></br>
+                 <center><p class="details" style="margin-top: -40px; margin-left: 0px; font-size: 12px; color: grey;"><b><a href="https://github.com/techtek/miniMEMEsoftware">miniMEME for ESP32</a>  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  <a href="https://github.com/techtek/Downloads/commits/main/" target="_blank" style="color: white" onClick="window.open('https://techtek.github.io/miniMEMEweb/','pagename','resizable,height=720,width=720'); return false;">miniMEME WEB</a> </b></p></center>
+				 <br></br>
+				 <center><p class="details" style="margin-top: -25px; margin-left: 0px; font-size: 12px; color: grey;"><a href="https://github.com/techtek/Downloads/commits/main/" target="_blank" style="color: #5b5b5b" onClick="window.open('https://github.com/techtek/Downloads/commits/main/','pagename','resizable,height=1000,width=500'); return false;">Server Activity</a></p></center>
             </div>
           </div>
         </div>
@@ -87,6 +91,7 @@
 
 html, body, html * {
     font-family: 'Roboto', sans-serif;
+	
 }
 
 section {
@@ -198,12 +203,14 @@ a:hover {
     border: 1px solid #0DFF00;
     border-radius: 50px;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 .box button:hover {
     background: #0DFF00;
     color: #fff;
     transition: 0.5s;
+	cursor: pointer;
 }
 
 .right {
@@ -223,4 +230,34 @@ a:hover {
         text-align: center;
     }
 }
+
+
+iframe {
+
+margin-left: -650px;
+margin-top: -50px;
+
+}
+
+/* Media Query for responsive iframe layout */
+@media (max-width: 768px) {
+    iframe {
+        height: 800px; /* Set a fixed height for smaller screens */
+    }
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+
 </style>
