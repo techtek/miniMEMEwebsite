@@ -4,6 +4,40 @@
 
 
 <body style="background-color: #000000;">
+
+<div>
+  <style type="text/css">.homepage-page-peel {
+      background: right top no-repeat;
+      background-size: 350px 350px;
+      box-sizing: border-box;
+      color: white;
+      height: 202px;
+      line-height: 21px;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;      
+      z-index: 3;
+	  opacity: 90%
+    }
+</style>
+  <img id="page-peel-image" class="homepage-page-peel" src="hackatronwin.png" usemap="#page-peel" />
+  
+  <map name="page-peel">
+  <area shape="poly" href="https://forum.trondao.org/t/minimeme-a-tron-blockchain-powered-iot-platform/27768" coords="0,0,243,139,384,270,384,1,82,0" />
+  </map>
+</div>
+<script>
+const image = document.querySelector("#page-peel-image")
+
+image.addEventListener("click", (event) => {
+  yPos = event.clientY
+  xPos = event.clientX
+  console.log(`${xPos}, ${yPos}`)
+})
+</script>
+
+
  
     <header></header>
     
@@ -335,6 +369,21 @@ margin-top: -10px;
 	
     	scale: 90%;
 		}
+		
+		.homepage-page-peel {
+			background: right top no-repeat;
+			background-size: 350px 350px;
+			box-sizing: border-box;
+			color: white;
+			height: 172px;
+			line-height: 21px;
+			padding: 0;
+			position: absolute;
+			right: -10px; 
+			top: -10px; 
+			z-index: 3;
+			opacity: 0.9; 
+		}
 	
 }
 
@@ -363,4 +412,8 @@ body {
 
 
 
+
 </style>
+
+
+
